@@ -30,3 +30,19 @@ LinkedList.prototype.addToTail = function (value) {
     this.tail = newTail; 
   }
 }
+
+LinkedList.prototype.removeHead = function() {
+  if (this.head === null) {
+    return null;
+  } else {
+    let value = this.head.value;
+    this.head = this.head.next;
+
+    if (this.head) {
+      this.head.prev = null; 
+    } else {
+      this.tail = null;
+    }
+   return value;
+  }
+}
