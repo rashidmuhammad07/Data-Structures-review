@@ -19,3 +19,14 @@ LinkedList.prototype.addToHead = function (value) {
     this.head = newHead;
   }
 }
+
+LinkedList.prototype.addToTail = function (value) {
+  const newTail = new Node(value, null, this.tail);
+  if(this.tail === null) {
+    this.tail = newTail;
+    this.head = newTail;
+  } else {
+    this.tail.next = newTail;
+    this.tail = newTail; 
+  }
+}
