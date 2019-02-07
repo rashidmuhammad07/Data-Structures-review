@@ -32,17 +32,31 @@ LinkedList.prototype.addToTail = function (value) {
 }
 
 LinkedList.prototype.removeHead = function() {
-  if (this.head === null) {
-    return null;
-  } else {
-    let value = this.head.value;
-    this.head = this.head.next;
+ let value = this.head.value;
 
-    if (this.head) {
-      this.head.prev = null; 
-    } else {
-      this.tail = null;
-    }
-   return value;
-  }
+ if (this.head) {
+   this.head = this.head.next;
+
+   if (this.head) {
+     this.head.prev = null;
+   } else {
+     this.tail = null;
+   }
+ }
+ return value;
+}
+
+LinkedList.prototype.removeTail = function() {
+ let value = this.tail.value;
+ 
+ if (this.tail) {
+   this.tail = this.tail.prev;
+
+   if (this.tail) {
+     this.tail.next = null;
+   } else {
+     this.head = null;
+   }
+ }
+ return value;
 }
