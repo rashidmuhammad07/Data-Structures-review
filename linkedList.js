@@ -60,3 +60,15 @@ LinkedList.prototype.removeTail = function() {
  }
  return value;
 }
+
+LinkedList.prototype.search = function(searchValue) {
+  let currentNode = this.head;
+
+  while(currentNode.value !== null) {
+    if (currentNode.value === searchValue) {
+      return currentNode;
+    }
+    currentNode = currentNode.next;
+  }
+  return null;
+}
