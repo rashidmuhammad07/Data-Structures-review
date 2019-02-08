@@ -5,3 +5,9 @@ let hash = function(string, max) {
   }
   return sum % max;
 }
+
+let HashTable = function () {
+  this.storage = [];
+  this.storageLimit = 15;
+
+}
