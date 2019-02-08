@@ -11,3 +11,8 @@ let HashTable = function () {
   this.storageLimit = 15;
 
 }
+
+HashTable.prototype.print = function() {
+  console.log(this.storage);
+}
+
