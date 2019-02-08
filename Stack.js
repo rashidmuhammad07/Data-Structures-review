@@ -19,3 +19,10 @@ Stack.prototype.pop = function() {
   return value;
 }
 
+Stack.prototype.peek = function() {
+  return this.storage[this.count];
+}
+
+Stack.prototype.size = function() {
+ return this.count; 
+}
