@@ -7,7 +7,8 @@ Queue.prototype.enqueue = function (value) {
 }
 
 Queue.prototype.dequeue = function (value) {
-  this.storage.pop();
+  let result = this.storage.pop();
+  return result;
 }
 
 Queue.prototype.first = function (value) {
