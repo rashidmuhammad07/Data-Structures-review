@@ -6,25 +6,24 @@ Queue.prototype.enqueue = function (value) {
   this.storage.unshift(value);
 }
 
-Queue.prototype.dequeue = function (value) {
-  let result = this.storage.pop();
-  return result;
+Queue.prototype.dequeue = function () {
+  this.storage.pop();
 }
 
-Queue.prototype.first = function (value) {
+Queue.prototype.first = function () {
   if (this.storage.length < 1) {
     return undefined;
   }
   return this.storage[0];
 }
 
-Queue.prototype.last = function (value) {
+Queue.prototype.last = function () {
   if (this.storage.length < 1) {
     return undefined;
   }
   return this.storage[this.storage.length - 1];
 }
 
-Queue.prototype.size = function (value) {
+Queue.prototype.size = function () {
   return this.storage.length;
 }
