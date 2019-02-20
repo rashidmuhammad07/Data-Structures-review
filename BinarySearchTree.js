@@ -1,7 +1,6 @@
 let BTree = function () {
   this.root = null;
 }
-
 let Node = function (val) {
   this.value = val;
   this.left = null;
@@ -38,16 +37,14 @@ BTree.prototype.traverse = function() {
 }
 
 BTree.prototype.search = function(value) {
-  this.root.find(value);
+  return this.root.find(value);
 } 
 
 Node.prototype.visit = function() {
   if (this.left !== null) {
     this.left.visit();
   }
-
   console.log(this.value);
-  
   if (this.right !== null) {
      this.right.visit();
   }
@@ -55,12 +52,11 @@ Node.prototype.visit = function() {
 
 Node.prototype.find = function (value) {
   if (this.value === value) {
-    console.log(`FOUND: ${value}`);
+    return this;
   } else if (value > this.value && this.right !== null) {
-    this.right.find(value);
+    return this.right.find(value);
   } else if (value < this.value && this.left !== null) {
-    this.left.find(value);
-  } else {
-    console.log('NOT FOUND');
-  }
+    return this.left.find(value);
+  } 
+  return null;
 }
